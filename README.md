@@ -8,5 +8,7 @@ sudo docker-compose up -d
 
 ### Add user
 ```
-./create-client-cert.sh <USERNAME>
+./add-user.sh <USERNAME>
 ```
+
+Then copy `<USERNAME>.ovpn` file to your machine and use for OpenVPN client
