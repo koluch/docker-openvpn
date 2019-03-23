@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  vpn:
+    restart: always
+    image: koluch/docker-openvpn
+    volumes:
+      - ovpn_data:/etc/openvpn
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1194:1194/udp"
+    cap_add:
+      - NET_ADMIN
+    hostname: openvpn-server
+    container_name: openvpn-server
+
+volumes:
+  ovpn_data:
